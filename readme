@@ -1,5 +1,6 @@
  基于ssm框架的图书管理系统
 已完成：使用maven管理依赖，并使得项目层次更加清晰。
+完成ssm框架配置文件的整合以及jdbc.properties和log4j.properties的配置
 todo：
 1、实现基本的帐号系统
 2、完成图书资料的上传功能
