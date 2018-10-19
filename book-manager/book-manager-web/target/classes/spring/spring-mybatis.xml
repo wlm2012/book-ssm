@@ -1,48 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:aop="http://www.springframework.org/schema/aop"
-    xmlns:context="http://www.springframework.org/schema/context"
-    xmlns:tx="http://www.springframework.org/schema/tx"
-    xsi:schemaLocation="http://www.springframework.org/schema/beans
-        http://www.springframework.org/schema/beans/spring-beans-4.1.xsd
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-4.2.xsd
         http://www.springframework.org/schema/tx
-        http://www.springframework.org/schema/tx/spring-tx-4.1.xsd
+        http://www.springframework.org/schema/tx/spring-tx-4.2.xsd
         http://www.springframework.org/schema/aop
-        http://www.springframework.org/schema/aop/spring-aop-4.1.xsd
+        http://www.springframework.org/schema/aop/spring-aop-4.2.xsd
         http://www.springframework.org/schema/context
-        http://www.springframework.org/schema/context/spring-context-4.1.xsd">
-      <!-- 自动扫描 -->
-      <context:component-scan base-package="com.book"></context:component-scan>
-      <!-- 加载数据资源属性文件 -->
-      <bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
-      <property name="location" value="classpath:conf/jdbc.properties"></property>
-      </bean>
-  <!-- 配置数据源 -->
-  <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource" destroy-method="close">
-  <property name="url" value="${jdbc.url}"/>
-  <property name="name" value="${jdbc.username}"/>
-  <property name="password" value="${jdbc.password}"/>
-  <property name="drierClassName" value="${jdbc.drive}"/>
-  <property name="maxActive" value="10"/>
-  <property name="minIdle" value="5"/>
-    </bean>
-  <!-- 配置sessionfactory  --> 
- <bean id="sqlSessionFactory" class="org.mybaties.spring.sqlSessionFactoryBean">
- <property name="dataSource" ref="dataSource"/>
- <property name="mapperLocations" value="classpath:com/book/mapping/*.xml"/>
-  </bean>
-  <!-- 装配dao接口 -->
-  <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-  <property name="basePackage" value="com.book.dao"/>
-  <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"/>
-  </bean>
-  <!-- 声明事务管理 -->
-  <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
-  <property name="dataSource" ref="dataSource"/>
-  </bean>
-  <!-- 7、注解事务切面 -->
-  <span style="font-family: Arial, Helvetica, sans-serif;"></span>
-  <pre name="code" class="html"> 
-    <tx:annotation-driven transaction-manager="transactionManager"/>
-        </beans>
+        http://www.springframework.org/schema/context/spring-context-4.2.xsd">
+	<!-- 自动扫描 -->
+	<context:component-scan base-package="com.book"></context:component-scan>
+	<!-- 加载数据资源属性文件 -->
+	<bean id="propertyConfigurer"
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="location"
+			value="classpath:conf/jdbc.properties"></property>
+	</bean>
+	<!-- 配置数据源 -->
+	<bean id="dataSource"
+		class="com.alibaba.druid.pool.DruidDataSource" destroy-method="close">
+		<property name="url" value="${jdbc.url}" />
+		<property name="name" value="${jdbc.username}" />
+		<property name="password" value="${jdbc.password}" />
+		<property name="drierClassName" value="${jdbc.drive}" />
+		<property name="maxActive" value="10" />
+		<property name="minIdle" value="5" />
+	</bean>
+	<!-- 配置sessionfactory -->
+	<bean id="sqlSessionFactory"
+		class="org.mybaties.spring.sqlSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<property name="mapperLocations"
+			value="classpath:com/book/mapping/*.xml" />
+	</bean>
+	<!-- 装配dao接口 -->
+	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+		<property name="basePackage" value="com.book.dao" />
+		<property name="sqlSessionFactoryBeanName"
+			value="sqlSessionFactory" />
+	</bean>
+	<!-- 声明事务管理 -->
+	<bean id="transactionManager"
+		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+	<!-- 7、注解事务切面 -->
+
+	<tx:annotation-driven
+		transaction-manager="transactionManager" />
+</beans>
