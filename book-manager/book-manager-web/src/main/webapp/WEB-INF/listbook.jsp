@@ -12,7 +12,7 @@
 
 
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>首页 查看书籍</title>
 </head>
 <body>
 
