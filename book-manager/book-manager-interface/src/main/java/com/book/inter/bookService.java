@@ -11,7 +11,7 @@ public interface bookService {
 
 	void updateBook(TBook book);
 
-	void deleteBook(TBook book);
+	void deleteBook(int id);
 
 	TBook getTBook(int id);
 
