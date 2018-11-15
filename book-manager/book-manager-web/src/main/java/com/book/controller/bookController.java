@@ -1,6 +1,5 @@
 package com.book.controller;
 
-import java.awt.print.Book;
 import java.math.BigDecimal;
 import java.util.List;
 
@@ -16,7 +15,7 @@ import com.book.inter.bookService;
 import com.book.pojo.TBook;
 
 @Controller
-@RequestMapping("")
+// @RequestMapping("")
 public class bookController {
 	@Resource
 	private bookService bookService;
@@ -24,10 +23,10 @@ public class bookController {
 	@RequestMapping("/addbook")
 	public String addbook(HttpServletRequest request, HttpServletResponse response) {
 		TBook book = new TBook();
-		String bname = request.getParameter(bname);
-		String author = request.getParameter(author);
-		String price = request.getParameter(price);
-		String press = request.getParameter(press);
+		String bname = request.getParameter("bname");
+		String author = request.getParameter("author");
+		String price = request.getParameter("price");
+		String press = request.getParameter("press");
 		book.setBname(bname);
 		book.setAuthor(author);
 		book.setPrice(new BigDecimal(price));
@@ -60,9 +59,28 @@ public class bookController {
 		bookService.deleteBook(id);
 		return "listbook";
 	}
-@RequestMapping("/editbook")
-public ModelAndView editBook(int id) {
-	ModelAndView modelAndView=new ModelAndView();
-	
-}
+
+	@RequestMapping("/editbook")
+	public ModelAndView editBook(int id) {
+		ModelAndView modelAndView = new ModelAndView();
+		TBook book = bookService.getTBook(id);
+		modelAndView.addObject("book", book);
+		modelAndView.setViewName("editbook");
+		return modelAndView;
+	}
+
+	@RequestMapping("/updatebook")
+	public String updateBook(HttpServletRequest request, HttpServletResponse response) {
+		TBook book = new TBook();
+		String bname = request.getParameter("bname");
+		String author = request.getParameter("author");
+		String price = request.getParameter("price");
+		String press = request.getParameter("press");
+		book.setBname(bname);
+		book.setAuthor(author);
+		book.setPrice(new BigDecimal(price));
+		book.setPress(press);
+		bookService.updateBook(book);
+		return "listbook";
+	}
 }
