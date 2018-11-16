@@ -5,9 +5,7 @@
     <artifactId>book-parent</artifactId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>
-  <groupId>com.book</groupId>
   <artifactId>book-manager</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
   <packaging>pom</packaging>
    <dependencies>
   <dependency>

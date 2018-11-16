@@ -15,7 +15,7 @@ import com.book.inter.bookService;
 import com.book.pojo.TBook;
 
 @Controller
-// @RequestMapping("")
+ @RequestMapping("")
 public class bookController {
 	@Resource
 	private bookService bookService;

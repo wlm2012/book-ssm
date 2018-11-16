@@ -30,19 +30,19 @@
 				</tr>
 			</thead>
 			<tbody>
-				<c:forEach items="${books} var=" b" varSatus="status">
+				<c:forEach items="${books}" var="b" varStatus="status">
 					<tr>
 						<td>${b.bname}</td>
 						<td>${b.author}</td>
 						<td>${b.price}</td>
 						<td>${b.press}</td>
-						<td><a hef="/editbook?id=${b.id}"><span
+						<td><a href="/editbook?id=${b.id}"><span
 								class="glyphicon glyphicon-edit"></span></a></td>
-						<td><a hef="/deletebook?id=${b.id}"><span
+						<td><a href="/deletebook?id=${b.id}"><span
 								class="glyphicon glypicon-trash"></span></a></td>
 					</tr>
 					<tr>
-						<td colspan="6"><a hef="/addbook">增加书籍</a></td>
+						<td colspan="6"><a href="/addbook">增加书籍</a></td>
 					</tr>
 
 				</c:forEach>
