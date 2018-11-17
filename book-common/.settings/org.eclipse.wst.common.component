@@ -2,5 +2,8 @@
     <wb-module deploy-name="book-common">
         <wb-resource deploy-path="/" source-path="/src/main/java"/>
         <wb-resource deploy-path="/" source-path="/src/main/resources"/>
+        <dependent-module archiveName="druid-1.0.9.jar" deploy-path="/" handle="module:/classpath/var/M2_REPO/com/alibaba/druid/1.0.9/druid-1.0.9.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
     </wb-module>
 </project-modules>
