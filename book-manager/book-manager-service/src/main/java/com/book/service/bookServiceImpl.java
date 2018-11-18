@@ -7,7 +7,6 @@ import javax.annotation.Resource;
 import org.springframework.stereotype.Service;
 
 import com.book.dao.TBookMapper;
-import com.book.inter.bookService;
 import com.book.pojo.TBook;
 import com.book.pojo.TBookExample;
 import com.book.pojo.TBookExample.Criteria;
@@ -43,8 +42,8 @@ public class bookServiceImpl implements bookService {
 	}
 
 	public List<TBook> list(int start, int count) {
-		TBookExample example=new TBookExample();
-		Criteria criteria=example.createCriteria();
+		TBookExample example = new TBookExample();
+		Criteria criteria = example.createCriteria();
 		criteria.andBidBetween(String.valueOf(start), String.valueOf(count));
 		return bookMapper.selectByExample(example);
 	}

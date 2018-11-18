@@ -4,9 +4,9 @@
 <html>
 <head>
 <script src="js/jquery/jquery-3.3.1.js"></script>
-<link href="css/bootstrap/bootstrap.main.css" rel="stylesheep">
-<script src="js/bootstrap/bootstrap.main.js"></script>
-<link href="css/style.css" rel=“stylesheep”>
+<link href="css/bootstrap/bootstrap.min.css" rel="stylesheet">
+<script src="js/bootstrap/bootstrap.min.js"></script>
+<link href="css/style.css" rel=“stylesheet”>
 <meta charset="UTF-8">
 <title>编辑书籍</title>
 </head>

@@ -10,6 +10,9 @@
         <dependent-module archiveName="book-manager-pojo-0.0.1-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/book-manager-pojo/book-manager-pojo">
             <dependency-type>uses</dependency-type>
         </dependent-module>
+        <dependent-module archiveName="book-manager-service-0.0.1-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/book-manager-service/book-manager-service">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
         <dependent-module archiveName="book-common-0.0.1-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/book-common/book-common">
             <dependency-type>uses</dependency-type>
         </dependent-module>

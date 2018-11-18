@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.book.mapper.TBookMapper" >
+<mapper namespace="com.book.dao.TBookMapper" >
   <resultMap id="BaseResultMap" type="com.book.pojo.TBook" >
     <id column="bid" property="bid" jdbcType="CHAR" />
     <result column="bname" property="bname" jdbcType="VARCHAR" />

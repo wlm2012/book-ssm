@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.book.mapper.TAdminMapper" >
+<mapper namespace="com.book.dao.TAdminMapper" >
   <resultMap id="BaseResultMap" type="com.book.pojo.TAdmin" >
     <result column="loginname" property="loginname" jdbcType="VARCHAR" />
     <result column="loginpass" property="loginpass" jdbcType="VARCHAR" />

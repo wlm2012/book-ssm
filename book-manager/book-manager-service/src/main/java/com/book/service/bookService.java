@@ -1,4 +1,4 @@
-package com.book.inter;
+package com.book.service;
 
 import java.util.List;
 

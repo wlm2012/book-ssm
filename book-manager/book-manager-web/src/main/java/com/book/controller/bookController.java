@@ -3,21 +3,21 @@ package com.book.controller;
 import java.math.BigDecimal;
 import java.util.List;
 
-import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.book.inter.bookService;
 import com.book.pojo.TBook;
+import com.book.service.bookService;
 
 @Controller
- @RequestMapping("")
+@RequestMapping("")
 public class bookController {
-	@Resource
+	@Autowired
 	private bookService bookService;
 
 	@RequestMapping("/addbook")
@@ -36,7 +36,7 @@ public class bookController {
 	}
 
 	@RequestMapping("/listbook")
-	public String lsitbook(HttpServletRequest request, HttpServletResponse response) {
+	public String listbook(HttpServletRequest request, HttpServletResponse response) {
 		int start = 0;
 		int count = 10;
 		try {
