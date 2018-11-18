@@ -39,16 +39,33 @@
 						<td><a href="/editbook?id=${b.bid}"><span
 								class="glyphicon glyphicon-edit"></span></a></td>
 						<td><a href="/deletebook?id=${b.bid}"><span
-								class="glyphicon glypicon-trash"></span></a></td>
+								class="glyphicon glyphicon-trash"></span></a></td>
 					</tr>
-					<tr>
-						<td colspan="6"><a href="/addbook">增加书籍</a></td>
-					</tr>
-
 				</c:forEach>
+				<tr>
+					<td colspan="6" align="center"><a href="/addbook">增加</a></td>
+				</tr>
 			</tbody>
 		</table>
 	</div>
+<nav class="pageDIV">
+<ul class="pagination">
+<li <c:if test="${!page.hasPreviouse}">class="disabled"</c:if>>
+<a href="?page.start=0">
+<span>«</span>
+</a>
+</li>
 
+<li <c:if test="${!page.hasPreviouse}">class="disables"</c:if>>
+<a href="?page.start=${page.start-page.count }">
+<span>‹</span>
+</a>
+</li>
+
+<li <c:if test="${!page. }"></c:if>
+</li>
+
+</ul>
+</nav>
 </body>
 </html>
