@@ -20,19 +20,26 @@ public class bookController {
 	@Autowired
 	private bookService bookService;
 
+	@RequestMapping("/addbook1")
+	public String addbook1() {
+		return "addbook";
+	}
+
 	@RequestMapping("/addbook")
 	public String addbook(HttpServletRequest request, HttpServletResponse response) {
 		TBook book = new TBook();
+		String bid = request.getParameter("bid");
 		String bname = request.getParameter("bname");
 		String author = request.getParameter("author");
 		String price = request.getParameter("price");
 		String press = request.getParameter("press");
+		book.setBid(bid);
 		book.setBname(bname);
 		book.setAuthor(author);
 		book.setPrice(new BigDecimal(price));
 		book.setPress(press);
 		bookService.addBook(book);
-		return "listbook";
+		return "redirect:listbook";
 	}
 
 	@RequestMapping("/listbook")
@@ -41,7 +48,7 @@ public class bookController {
 		int count = 10;
 		try {
 			start = Integer.parseInt(request.getParameter("page.start"));
-			count = Integer.parseInt(request.getParameter("page.count"));
+			// count = Integer.parseInt(request.getParameter("page.count"));
 		} catch (Exception e) {
 			// TODO: handle exception
 		}
@@ -57,7 +64,7 @@ public class bookController {
 	@RequestMapping("/deletebook")
 	public String deleteBook(int id) {
 		bookService.deleteBook(id);
-		return "listbook";
+		return "redirect:listbook";
 	}
 
 	@RequestMapping("/editbook")

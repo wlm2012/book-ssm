@@ -18,6 +18,11 @@
 				<form method="post" action="/addbook" role="form">
 					<table class="addTable">
 						<tr>
+							<td>id:</td>
+							<td><input type="text" name="bid" id="bid"
+								placeholder="请输入id"></td>
+						</tr>
+						<tr>
 							<td>图书名称：</td>
 							<td><input type="text" name="bname" id="bname"
 								placeholder="请输入图书名称"></td>

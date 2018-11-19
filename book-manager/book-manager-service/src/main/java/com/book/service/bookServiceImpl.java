@@ -20,7 +20,6 @@ public class bookServiceImpl implements bookService {
 	@Override
 	public int getTotal() {
 		TBookExample example = new TBookExample();
-
 		return bookMapper.countByExample(example);
 	}
 
@@ -30,11 +29,13 @@ public class bookServiceImpl implements bookService {
 
 	public void updateBook(TBook book) {
 		TBookExample example = new TBookExample();
+		Criteria criteria = example.createCriteria();
+		criteria.andBidEqualTo(book.getBid());
 		bookMapper.updateByExample(book, example);
 	}
 
 	public void deleteBook(int id) {
-		bookMapper.deleteByPrimaryKey(String.valueOf(id));
+				bookMapper.deleteByPrimaryKey(String.valueOf(id));
 	}
 
 	public TBook getTBook(int id) {
@@ -44,7 +45,7 @@ public class bookServiceImpl implements bookService {
 	public List<TBook> list(int start, int count) {
 		TBookExample example = new TBookExample();
 		Criteria criteria = example.createCriteria();
-		criteria.andBidBetween(String.valueOf(start), String.valueOf(count));
+		criteria.andOrderbyBetween(start, (start+count));
 		return bookMapper.selectByExample(example);
 	}
 }

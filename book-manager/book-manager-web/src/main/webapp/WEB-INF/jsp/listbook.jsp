@@ -43,29 +43,40 @@
 					</tr>
 				</c:forEach>
 				<tr>
-					<td colspan="6" align="center"><a href="/addbook">增加</a></td>
+					<td colspan="6" align="center"><a href="/addbook1">增加</a></td>
 				</tr>
 			</tbody>
 		</table>
 	</div>
-<nav class="pageDIV">
-<ul class="pagination">
-<li <c:if test="${!page.hasPreviouse}">class="disabled"</c:if>>
-<a href="?page.start=0">
-<span>«</span>
-</a>
-</li>
+	<nav class="pageDIV">
+		<ul class="pagination">
+			<li <c:if test="${!page.hasPreviouse}">class="disabled"</c:if>>
+				<a href="?page.start=0"> <span>«</span>
+			</a>
+			</li>
 
-<li <c:if test="${!page.hasPreviouse}">class="disables"</c:if>>
-<a href="?page.start=${page.start-page.count }">
-<span>‹</span>
-</a>
-</li>
+			<li <c:if test="${!page.hasPreviouse}">class="disables"</c:if>>
+				<a href="?page.start=${page.start-page.count }"> <span>‹</span>
+			</a>
+			</li>
 
-<li <c:if test="${!page. }"></c:if>
-</li>
-
-</ul>
-</nav>
+			<c:forEach begin="0" end="${page.totalPage-1 }" varStatus="status">
+				<c:if
+					test="${status.count*page.count-page.start <=30 && status.count*page.count-page.start >=-10}">
+					<li
+						<c:if test="${status.index*page.count==page.start}">class="disabled"</c:if>>
+						<a href="?page.start=${status.index*page.count }"
+						<c:if test="status.index*page.count==page.start">class="current"</c:if>>${status.count}</a>
+					</li>
+				</c:if>
+			</c:forEach>
+			<li <c:if test="${!page.hasNext }">class="disabled"</c:if>><a
+				href="?page.start=${page.start+page.count }"> <span>›</span>
+			</a></li>
+			<li <c:if test="${!page.hasNext }">class="disabled"</c:if>><a
+				href="?page.start=${page.last}"> <span>»</span>
+			</a></li>
+		</ul>
+	</nav>
 </body>
 </html>

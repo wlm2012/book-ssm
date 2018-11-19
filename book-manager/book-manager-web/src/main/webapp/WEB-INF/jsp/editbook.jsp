@@ -11,11 +11,11 @@
 <title>编辑书籍</title>
 </head>
 <body>
-	<div class="addDIV">
+	<div class="editDIV">
 		<div class="panel panel-success">
 			<div class="panel-body">
 				<form method="post" action="/updatebook" role="form">
-					<table class="addTable">
+					<table class="editTable">
 						<tr>
 							<td>图书名称：</td>
 							<td><input type="text" name="bname" id="bname"
