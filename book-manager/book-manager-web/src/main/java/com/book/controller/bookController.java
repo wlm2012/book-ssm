@@ -62,13 +62,13 @@ public class bookController {
 	}
 
 	@RequestMapping("/deletebook")
-	public String deleteBook(int id) {
+	public String deleteBook(String id) {
 		bookService.deleteBook(id);
 		return "redirect:listbook";
 	}
 
 	@RequestMapping("/editbook")
-	public ModelAndView editBook(int id) {
+	public ModelAndView editBook(String id) {
 		ModelAndView modelAndView = new ModelAndView();
 		TBook book = bookService.getTBook(id);
 		modelAndView.addObject("book", book);
@@ -79,15 +79,19 @@ public class bookController {
 	@RequestMapping("/updatebook")
 	public String updateBook(HttpServletRequest request, HttpServletResponse response) {
 		TBook book = new TBook();
+		String bid = request.getParameter("bid");
 		String bname = request.getParameter("bname");
 		String author = request.getParameter("author");
 		String price = request.getParameter("price");
 		String press = request.getParameter("press");
+		String orderby = request.getParameter("orderby");
+		book.setBid(bid);
 		book.setBname(bname);
 		book.setAuthor(author);
 		book.setPrice(new BigDecimal(price));
 		book.setPress(press);
+		book.setOrderby(Integer.valueOf(orderby));
 		bookService.updateBook(book);
-		return "listbook";
+		return "redirect:listbook";
 	}
 }

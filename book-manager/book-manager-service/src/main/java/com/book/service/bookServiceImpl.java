@@ -34,18 +34,19 @@ public class bookServiceImpl implements bookService {
 		bookMapper.updateByExample(book, example);
 	}
 
-	public void deleteBook(int id) {
-				bookMapper.deleteByPrimaryKey(String.valueOf(id));
+	public void deleteBook(String id) {
+				bookMapper.deleteByPrimaryKey(id);
 	}
 
-	public TBook getTBook(int id) {
-		return bookMapper.selectByPrimaryKey(String.valueOf(id));
+	public TBook getTBook(String id) {
+		return bookMapper.selectByPrimaryKey(id);
 	}
 
 	public List<TBook> list(int start, int count) {
 		TBookExample example = new TBookExample();
 		Criteria criteria = example.createCriteria();
-		criteria.andOrderbyBetween(start, (start+count));
+	//	criteria.andOrderbyBetween(start, (start+count));
+		criteria.andBidBetween(String.valueOf(start), String.valueOf(start+count));
 		return bookMapper.selectByExample(example);
 	}
 }

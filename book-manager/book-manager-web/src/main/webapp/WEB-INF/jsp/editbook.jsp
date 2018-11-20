@@ -19,27 +19,28 @@
 						<tr>
 							<td>图书名称：</td>
 							<td><input type="text" name="bname" id="bname"
-								placeholder="请输入图书名称"></td>
+								value="${book.bname }" placeholder="请输入图书名称"></td>
 						</tr>
 						<tr>
 							<td>作者：</td>
 							<td><input type="text" name="author" id="author"
-								placeholder="请输入作者"></td>
+								value="${book.author }" placeholder="请输入作者"></td>
 						</tr>
 						<tr>
 							<td>售价：</td>
 							<td><input type="text" name="price" id="price"
-								placeholder="请输入售价"></td>
+								value="${book.price }" placeholder="请输入售价"></td>
 						</tr>
 						<tr>
 							<td>出版社：</td>
 							<td><input type="text" name="press" id="press"
-								placeholder="请输入出版社"></td>
+								value="${book.press }" placeholder="请输入出版社"></td>
 						</tr>
 						<tr class="submitTR">
-							<td colspan="2" align="center">
-								<button type="submit" class="btn btn-success">提交</button>
-							</td>
+							<td colspan="2" align="center"><input type="hidden"
+								name="bid" value="${book.bid}"> <input type="hidden"
+								name="orderby" value="${book.orderby }">
+								<button type="submit" class="btn btn-success">提交</button></td>
 						</tr>
 					</table>
 				</form>

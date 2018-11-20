@@ -11,9 +11,9 @@ public interface bookService {
 
 	void updateBook(TBook book);
 
-	void deleteBook(int id);
+	void deleteBook(String id);
 
-	TBook getTBook(int id);
+	TBook getTBook(String id);
 
 	List<TBook> list(int start, int count);
 }
