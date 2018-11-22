@@ -429,4 +429,7 @@
       salesvol = #{salesvol,jdbcType=INTEGER}
     where bid = #{bid,jdbcType=CHAR}
   </update>
+  <select id="selectbooks"   resultMap="BaseResultMap">
+  select * from t_book order by orderby limit #{0},#{1}
+  </select>
 </mapper>

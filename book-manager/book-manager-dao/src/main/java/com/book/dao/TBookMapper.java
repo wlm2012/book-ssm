@@ -19,6 +19,7 @@ public interface TBookMapper {
     int insertSelective(TBook record);
 
     List<TBook> selectByExample(TBookExample example);
+    List<TBook> selectbooks(int start,int last);
 
     TBook selectByPrimaryKey(String bid);
 
@@ -29,4 +30,5 @@ public interface TBookMapper {
     int updateByPrimaryKeySelective(TBook record);
 
     int updateByPrimaryKey(TBook record);
+    
 }

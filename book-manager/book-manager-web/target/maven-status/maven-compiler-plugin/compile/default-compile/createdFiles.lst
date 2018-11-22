@@ -1,2 +1,3 @@
 com/book/controller/page.class
 com/book/controller/bookController.class
+com/book/controller/loginInterceptor.class

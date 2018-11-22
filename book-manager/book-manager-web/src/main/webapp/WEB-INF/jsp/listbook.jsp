@@ -18,7 +18,7 @@
 	<div class="listDIV">
 		<table
 			class="table table-striped table-bordered table-hover table-condensed">
-			<caption>书籍列表 共有${page.total}本书</caption>
+			<caption>书籍列表 共有${page.total}本书  <a href="/logout"> 登出</a></caption>
 			<thead>
 				<tr class="success">
 					<th>图书名称</th>

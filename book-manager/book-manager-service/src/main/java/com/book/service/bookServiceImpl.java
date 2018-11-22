@@ -35,7 +35,7 @@ public class bookServiceImpl implements bookService {
 	}
 
 	public void deleteBook(String id) {
-				bookMapper.deleteByPrimaryKey(id);
+		bookMapper.deleteByPrimaryKey(id);
 	}
 
 	public TBook getTBook(String id) {
@@ -43,10 +43,12 @@ public class bookServiceImpl implements bookService {
 	}
 
 	public List<TBook> list(int start, int count) {
-		TBookExample example = new TBookExample();
+		/*TBookExample example = new TBookExample();
 		Criteria criteria = example.createCriteria();
-	//	criteria.andOrderbyBetween(start, (start+count));
-		criteria.andBidBetween(String.valueOf(start), String.valueOf(start+count));
-		return bookMapper.selectByExample(example);
+		criteria.andOrderbyBetween(start, (start + count));
+		criteria.andBidBetween(String.valueOf(start), String.valueOf(start + count));
+		return bookMapper.selectByExample(example);*/
+		
+		return bookMapper.selectbooks(start, count);
 	}
 }

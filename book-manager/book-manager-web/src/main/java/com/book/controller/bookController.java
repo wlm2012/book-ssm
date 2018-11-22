@@ -5,12 +5,14 @@ import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.book.pojo.TAdmin;
 import com.book.pojo.TBook;
 import com.book.service.bookService;
 
@@ -20,6 +22,29 @@ public class bookController {
 	@Autowired
 	private bookService bookService;
 
+	@RequestMapping("/login")
+	public ModelAndView login(HttpServletRequest request, HttpServletResponse response) {
+		ModelAndView mv=new ModelAndView();
+		String loginname=request.getParameter("loginname");
+		String loginpassword=request.getParameter("loginpassword");
+		if (null!=loginname&&null!=loginpassword&&loginname.equals("wlm")&& loginpassword.equals("12345")) {
+			TAdmin admin=new TAdmin();
+			admin.setLoginname(loginname);
+			admin.setLoginpass(loginpassword);
+			request.getSession().setAttribute("admin",admin);
+			mv.setViewName("redirect:listbook");
+			return mv;
+		}
+		mv.setViewName("login");
+		return mv;
+		
+		
+	}
+	@RequestMapping("/logout")
+	public String logout(HttpSession session) {
+		session.invalidate();
+		return "login";
+	}
 	@RequestMapping("/addbook1")
 	public String addbook1() {
 		return "addbook";

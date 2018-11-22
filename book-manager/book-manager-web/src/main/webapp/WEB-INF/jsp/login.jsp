@@ -8,7 +8,7 @@
 <script src="js/bootstrap/bootstrap.min.js"></script>
 <link href="css/style.css" rel=“stylesheet”>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>首页</title>
+<title>登录</title>
 </head>
 <body>
 	<div class="panel panel-success">
