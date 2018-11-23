@@ -16,7 +16,7 @@ public interface TAdminMapper {
 
     int insertSelective(TAdmin record);
 
-    List<TAdmin> selectByExample(TAdminExample example);
+    List<TAdmin> selectByExample(TAdminExample example);    
 
     int updateByExampleSelective(@Param("record") TAdmin record, @Param("example") TAdminExample example);
 

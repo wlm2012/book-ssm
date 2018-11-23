@@ -11,7 +11,7 @@
 <title>登录</title>
 </head>
 <body>
-	<div class="panel panel-success">
+	<div class="panel panel-success" align="center">
 		<div class="panel-body">
 			<form action="/login" method="post">
 				<table class="editTable">
@@ -22,13 +22,13 @@
 					</tr>
 					<tr>
 						<td>密码：</td>
-						<td><input type="text" name="loginpassword" id="loginpassword"
-							placeholder="请输入密码"></td>
+						<td><input type="text" name="loginpassword"
+							id="loginpassword" placeholder="请输入密码"></td>
 					</tr>
 					<tr class="submitTR">
-					<td colspan="2" align="center">
-					<button type="submit" class="btn btn-success">提交</button>
-					</td>
+						<td colspan="2" align="center">
+							<button type="submit" class="btn btn-success">提交</button>
+						</td>
 					</tr>
 				</table>
 			</form>

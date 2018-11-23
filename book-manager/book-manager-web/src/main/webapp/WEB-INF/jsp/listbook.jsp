@@ -9,7 +9,13 @@
 <link href="css/bootstrap/bootstrap.min.css" rel="stylesheet">
 <script src="js/bootstrap/bootstrap.min.js"></script>
 <link href="css/style.css" rel=“stylesheet”>
-
+<script>
+	$(function() {
+		$("ul.pagination li.disabled a").click(function() {
+			return false;
+		});
+	});
+</script>
 
 <meta charset="UTF-8">
 <title>首页 查看书籍</title>
@@ -18,7 +24,9 @@
 	<div class="listDIV">
 		<table
 			class="table table-striped table-bordered table-hover table-condensed">
-			<caption>书籍列表 共有${page.total}本书  <a href="/logout"> 登出</a></caption>
+			<caption>
+				书籍列表 共有${page.total}本书 <a href="/logout"> 登出</a>
+			</caption>
 			<thead>
 				<tr class="success">
 					<th>图书名称</th>
@@ -55,7 +63,7 @@
 			</a>
 			</li>
 
-			<li <c:if test="${!page.hasPreviouse}">class="disables"</c:if>>
+			<li <c:if test="${!page.hasPreviouse}">class="disabled"</c:if>>
 				<a href="?page.start=${page.start-page.count }"> <span>‹</span>
 			</a>
 			</li>

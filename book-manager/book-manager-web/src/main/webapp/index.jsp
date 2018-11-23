@@ -11,7 +11,7 @@
 <title>首页</title>
 </head>
 <body>
-	<div class="panel panel-success">
+	<div class="panel panel-success" align="center">
 		<div class="panel-body">
 			<form action="/login" method="post">
 				<table class="editTable">
